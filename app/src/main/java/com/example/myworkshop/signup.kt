@@ -1,5 +1,6 @@
 package com.example.myworkshop
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -27,6 +28,10 @@ class signup : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_signup,null)
     }
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        db = DBhelper(activity)
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         uname = view.findViewById(R.id.signup_user)
@@ -34,12 +39,6 @@ class signup : Fragment() {
         redirect= view.findViewById(R.id.loginRedirectText)
         cpass = view.findViewById(R.id.c_password)
         btn = view.findViewById(R.id.signup_button)
-
-        fun onAttach(context: Context) {
-            super.onAttach(context)
-            db = DBhelper(this)
-        }
-        this::db.isInitialized
         btn.setOnClickListener{
             val username = uname.text.toString()
             val userpass = pass.text.toString()
@@ -54,8 +53,9 @@ class signup : Fragment() {
             else {
                 if(savedata==true){
                     Toast.makeText(activity,"Login uscessful",Toast.LENGTH_LONG).show()
-                    val i = Intent(activity,Workshop::class.java)
+                    val i = Intent(activity,Login::class.java)
                     activity?.startActivity(i)
+                    activity?.finish()
 
                 }
                 else {
@@ -66,6 +66,7 @@ class signup : Fragment() {
         redirect.setOnClickListener{
             val i = Intent(activity,Login::class.java)
             startActivity(i)
+            activity?.finish()
         }
     }
 }

@@ -12,7 +12,7 @@ import com.example.myworkshop.databinding.ActivityDatabaseBinding
 class database : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.activity_database)
 
     }
 }

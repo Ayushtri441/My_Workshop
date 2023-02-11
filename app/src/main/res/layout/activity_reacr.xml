@@ -24,7 +24,7 @@
         android:layout_height="300dp"
         android:id="@+id/imd"
         android:layout_centerInParent="true"
-        android:src="@drawable/data"></ImageView>
+        android:src="@drawable/react"></ImageView>
 
     <TextView
         android:layout_width="wrap_content"

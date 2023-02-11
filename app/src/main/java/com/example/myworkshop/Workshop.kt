@@ -33,28 +33,28 @@ class Workshop : Fragment() {
         react = view.findViewById(R.id.react1)!!
         cloud = view.findViewById(R.id.cloud1)!!
         and.setOnClickListener{
-            val intent = Intent (this.context, Android::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Android::class.java)
+            activity?.startActivity(intent)
         }
         data.setOnClickListener{
-            val intent = Intent (getActivity(), data::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, database::class.java)
+            activity?.startActivity(intent)
         }
         machine.setOnClickListener{
-            val intent = Intent (getActivity(), Machine::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Machine::class.java)
+            activity?.startActivity(intent)
         }
         dsa.setOnClickListener{
-            val intent = Intent (getActivity(), Dsa::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Dsa::class.java)
+            activity?.startActivity(intent)
         }
         react.setOnClickListener{
-            val intent = Intent (getActivity(), react::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Reacr::class.java)
+            activity?.startActivity(intent)
         }
         cloud.setOnClickListener{
-            val intent = Intent (getActivity(), Cloud::class.java)
-            getActivity()?.startActivity(intent)
+            val intent = Intent (activity, Cloud::class.java)
+            activity?.startActivity(intent)
         }
 
 

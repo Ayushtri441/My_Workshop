@@ -28,6 +28,7 @@ class Start : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListen
         }
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_density_small_24)
+            actionBar.title= "My Workshop"
         }
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)

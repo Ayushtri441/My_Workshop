@@ -11,6 +11,7 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkshop"
+
         tools:targetApi="31">
         <activity
             android:name=".database"
@@ -21,6 +22,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".Dsa"
             android:exported="false"
@@ -84,6 +86,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -33,8 +33,9 @@ class Login : AppCompatActivity() {
             else {
                 if(savedata==true){
                     Toast.makeText(this,"Login suscessful", Toast.LENGTH_LONG).show()
-                    val i = Intent(this,Workshop::class.java)
+                    val i = Intent(this@Login,Start::class.java)
                     startActivity(i)
+                    finish()
                 }
                 else {
                     Toast.makeText(this,"Not registered ! Please register", Toast.LENGTH_LONG).show()
