@@ -13,7 +13,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-
+import androidx.fragment.app.FragmentManager
+import com.example.myworkshop.MainActivity.Companion.globalVar
 class signup : Fragment() {
     private lateinit var uname :EditText
     private lateinit var pass :EditText
@@ -52,7 +53,8 @@ class signup : Fragment() {
             }
             else {
                 if(savedata==true){
-                    Toast.makeText(activity,"Login uscessful",Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity,"Signup uscessful",Toast.LENGTH_LONG).show()
+
                     val i = Intent(activity,Login::class.java)
                     activity?.startActivity(i)
                     activity?.finish()

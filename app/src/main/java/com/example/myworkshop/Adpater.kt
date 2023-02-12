@@ -29,12 +29,9 @@ class Adpater : RecyclerView.Adapter<Adpater.Holder>() {
 
     class Holder(var view : View) : RecyclerView.ViewHolder(view){
         var name = view.findViewById<TextView>(R.id.name)
-        var info = view.findViewById<TextView>(R.id.info)
-        var rate = view.findViewById<TextView>(R.id.rating)
+
         fun bindView(std : Model){
             name.text = std.name
-            info.text= std.info
-            rate.text = std.rating
         }
     }
 }

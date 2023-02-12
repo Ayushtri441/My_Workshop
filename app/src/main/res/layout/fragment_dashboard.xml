@@ -13,36 +13,18 @@
         android:textSize="20dp"
         android:id="@+id/name"
         android:text="Dashboard"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/yellow"
+        android:gravity="center"
+
         >
 
     </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/info"
-        android:text=""
-        >
-
-    </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/info"
-        android:id="@+id/rating"
-        android:text=""
-        >
-
-    </TextView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle"
-        android:layout_below="@+id/rating"
+    <ListView
+        android:layout_below="@id/name"
+        android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"></ListView>
 
 
 </RelativeLayout>

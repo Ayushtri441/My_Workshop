@@ -51,6 +51,7 @@ class Start : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListen
             R.id.Signup ->  supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, signup()).commit()
 
+
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

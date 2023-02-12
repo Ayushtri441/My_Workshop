@@ -11,8 +11,14 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkshop"
-
         tools:targetApi="31">
+        <activity
+            android:name=".User"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".database"
             android:exported="false"
@@ -22,7 +28,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Dsa"
             android:exported="false"
@@ -86,9 +91,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".MainActivity"
+
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyWorkshop.NoActionBar">

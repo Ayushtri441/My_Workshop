@@ -1,21 +1,23 @@
 package com.example.myworkshop
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import com.example.myworkshop.MainActivity.Companion.globalVar
 class dashboard : Fragment() {
-    lateinit var name: TextView
-    lateinit var info:TextView
-    lateinit var rating :TextView
     lateinit var workshopd: WorkshopdB
-    lateinit var recyclerView: RecyclerView
-    lateinit var adpater: Adpater
+    lateinit var list : ListView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,18 +26,30 @@ class dashboard : Fragment() {
         return inflater.inflate(R.layout.fragment_dashboard,null)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        name = view.findViewById(R.id.name)
-        info = view.findViewById(R.id.info)
-        rating = view.findViewById(R.id.rating)
-        workshopd  = WorkshopdB(context)
-        recyclerView = view.findViewById(R.id.recycle)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        adpater = Adpater()
-        recyclerView.adapter= adpater
-        val list = workshopd.getAllCourses()
-        adpater?.addItems(list)
+        if(globalVar.equals("") ){
+            Toast.makeText(activity,"Please Login to View DashBoard", Toast.LENGTH_LONG).show()
+        }
+        else {
+            list = view.findViewById(R.id.listview)
+            workshopd = WorkshopdB(context)
+            val name = workshopd.getAllCourses(globalVar)
+            list.adapter =
+                activity?.let {
+                    ArrayAdapter(
+                        it,
+                        android.R.layout.simple_spinner_dropdown_item,
+                        name
+                    )
+                }
+            (list.adapter as ArrayAdapter<String>?)?.notifyDataSetChanged()
+            list.invalidateViews()
+
+        }
+
+
 
 
     }

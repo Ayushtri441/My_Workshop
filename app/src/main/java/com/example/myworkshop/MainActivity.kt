@@ -11,6 +11,9 @@ import com.example.myworkshop.R
 import com.example.myworkshop.Start
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        var globalVar = ""
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
